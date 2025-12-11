@@ -1,0 +1,517 @@
+/* PACIFIC BLUE — APPLE DESIGN SYSTEM */
+
+:root {
+  --accent: #28c7fa;
+  --accent-dark: #0099d9;
+  --accent-light: rgba(40, 199, 250, 0.4);
+  --bg-start: #0b0e14;
+  --bg-end: #1a202c;
+  --text: #e8ecf2;
+  --muted: #a2a8b5;
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+  background: radial-gradient(circle at top, var(--bg-start), var(--bg-end));
+  color: var(--text);
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(25px);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  background: transparent;
+  border: none;
+  padding: 14px 18px;
+  text-align: left;
+  width: 100%;
+  color: var(--muted);
+  font-size: 15px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.25s ease-in-out;
+}
+
+.sidebar button:hover {
+  background: var(--accent-light);
+  color: var(--text);
+  box-shadow: 0 4px 14px rgba(40, 199, 250, 0.25);
+}
+
+.sidebar button.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  box-shadow: 0 6px 18px rgba(40, 199, 250, 0.45);
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 26px;
+  overflow-y: auto;
+  animation: fadeUp .4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TOPBAR */
+.topbar {
+  padding: 16px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* CARDS */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  transition: 0.28s ease;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(40, 199, 250, 0.35);
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  color: var(--text);
+  margin: 10px 0;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(20px);
+}
+
+/* BUTTONS */
+button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  color: #0a0e12;
+  box-shadow: 0 12px 30px rgba(40,199,250,0.35);
+  transition: 0.22s;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 42px rgba(40,199,250,0.55);
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.table th, .table td {
+  padding: 14px;
+}
+.table tr:nth-child(even) {
+  background: rgba(255,255,255,0.06);
+}
+.table tr:hover {
+  background: rgba(40,199,250,0.12);
+}
+
+/* LOGIN */
+.login-box {
+  width: 380px;
+  margin: 100px auto;
+  background: rgba(255,255,255,0.06);
+  padding: 40px;
+  border-radius: 26px;
+  text-align: center;
+  box-shadow: 0 18px 55px rgba(0,0,0,.55);
+}
+/* LOGIN HERO BACKGROUND */
+.login-bg {
+  height: 100vh;
+  background: radial-gradient(circle at top, #0d1117, #1b2533);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FROSTED GLASS LOGIN CARD */
+.login-glass {
+  width: 380px;
+  padding: 40px;
+  border-radius: 26px;
+  text-align: center;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 18px 60px rgba(40,199,250,0.45);
+  animation: slideUp .6s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(25px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* Typography Style */
+.logo-text {
+  font-size: 34px;
+  margin: 0 0 10px;
+  color: var(--accent);
+  background: linear-gradient(to right,#28c7fa,#0099d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.college-text {
+  margin: 0 0 25px;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+/* QR EXCLUSIVE STYLES */
+
+.qr-container {
+  text-align: center;
+}
+
+.page-title {
+  font-size: 26px;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+
+.qr-controls {
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.qr-display-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* GLASS CARD FOR QR */
+.qr-glass {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 26px;
+  box-shadow: 0 18px 55px rgba(40,199,250,0.35);
+  backdrop-filter: blur(28px);
+  border: 1px solid rgba(255,255,255,0.12);
+  animation: fadeIn 0.5s ease;
+}
+
+/* HOLOGRAM FRAME */
+.qr-frame {
+  position: relative;
+  padding: 18px;
+  border-radius: 18px;
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(40,199,250,0.1) 0px,
+      rgba(40,199,250,0.25) 2px,
+      rgba(40,199,250,0.1) 4px
+  );
+  border: 2px solid var(--accent);
+  overflow: hidden;
+}
+
+/* SCANNING BEAM ANIMATION */
+.scan-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--accent);
+  box-shadow: 0 0 18px var(--accent-light);
+  animation: scanMove 2.5s infinite linear;
+}
+
+@keyframes scanMove {
+  0% { top: 0; }
+  50% { top: 100%; }
+  100% { top: 0; }
+}
+
+.scan-text {
+  margin-top: 12px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+/* NO SESSION TEXT */
+.no-session {
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0.55;
+}
+/* STUDENT SCAN UI */
+
+.scan-container {
+  text-align: center;
+}
+
+.scan-view {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(40,199,250,0.1);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 30px rgba(40,199,250,0.3);
+  transition: 0.3s ease;
+}
+
+/* SCAN LENS GLOW EFFECT */
+.camera-live video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SUCCESS HOLOGRAM CHECK */
+.success-checkmark {
+  width: 100%;
+  height: 100%;
+  background: rgba(40,199,250,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hologramDissolve 0.8s ease forwards;
+}
+
+@keyframes hologramDissolve {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(4px);
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+/* CHECKMARK ANIMATION */
+.check {
+  width: 60px;
+  height: 30px;
+  border-left: 6px solid #00ff95;
+  border-bottom: 6px solid #00ff95;
+  transform: rotate(-45deg);
+  border-radius: 6px;
+  animation: checkPop 0.6s cubic-bezier(.19,1,.22,1) forwards;
+}
+
+@keyframes checkPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-45deg);
+  }
+}
+
+/* TEXT */
+.scan-info {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+/* LECTURE PAGE UI */
+
+.lecture-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Add Lecture Card */
+.add-lecture-card {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* GLASS TABLE STYLE */
+.glass-table {
+  background: rgba(255,255,255,0.06);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 12px 38px rgba(40,199,250,0.22);
+}
+
+/* Table Header (Sticky Look) */
+.table-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 100px 120px 100px;
+  padding: 14px;
+  background: rgba(255,255,255,0.12);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Table Rows */
+.table-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 100px 120px 100px;
+  padding: 16px;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: 0.28s ease;
+}
+
+.table-row:hover {
+  background: rgba(40,199,250,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(40,199,250,0.2);
+}
+
+/* Delete Button */
+.row-delete {
+  background: rgba(255,0,0,0.25);
+  color: #ff8b8b;
+  border: 1px solid rgba(255,0,0,0.32);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.row-delete:hover {
+  background: rgba(255,0,0,0.45);
+  color: #fff;
+}
+/* RESPONSIVE DASHBOARD GRID */
+.dash-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.dash-card {
+  text-align: center;
+}
+
+.dash-card h2 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--accent);
+}
+
+.dash-card p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+/* BUTTON + INPUT SPACING IMPROVEMENT */
+button,
+input,
+select {
+  margin: 8px 0; /* Adds vertical breathing room */
+}
+
+/* Segmented Tabs (Admin Control) */
+.segmented-control {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px; /* Space below tabs */
+}
+
+/* Bigger buttons inside segmented control */
+.segmented-control button {
+  padding: 10px 20px;
+  border-radius: 16px;
+}
+
+/* Card Layout Improvement */
+.card {
+  margin-bottom: 30px; /* More gap between sections */
+}
+
+/* Table Row Button Spacing */
+.table-row button {
+  margin-left: 10px;
+}
+
+/* Create visual spacing in QR Controls */
+.qr-controls {
+  margin-bottom: 26px;
+  gap: 14px;
+}
+
+/* For mobile responsive spacing */
+@media (max-width: 600px) {
+  button,
+  input,
+  select {
+    width: 100%; /* Full width on mobile */
+  }
+}
+.timer {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.expired {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ff3b30;
+}
+
+
+
