@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
-import AdminControlPage from "./pages/AdminControlPage";
-import StudentDashboard from "./pages/StudentDashboard";
-import StudentScanPage from "./pages/StudentScanPage";
+import AdminControlPage from "./Pages/AdminControlPage";
+import StudentDashboard from "./Pages/StudentDashboard";
+import StudentScanPage from "./Pages/StudentScanPage";
 
 
 const USERS = {
